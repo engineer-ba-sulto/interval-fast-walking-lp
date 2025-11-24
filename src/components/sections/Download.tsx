@@ -1,7 +1,7 @@
 "use client";
 
-import LandingButton from "@/components/ui/LandingButton";
 import FadeIn from "@/components/ui/FadeIn";
+import LandingButton from "@/components/ui/LandingButton";
 
 export default function DownloadSection() {
   return (
@@ -25,10 +25,7 @@ export default function DownloadSection() {
           </p>
         </FadeIn>
 
-        <FadeIn delay={200} className="flex flex-col sm:flex-row justify-center gap-6">
-          <LandingButton variant="secondary" size="lg" className="shadow-2xl">
-            無料でダウンロード
-          </LandingButton>
+        <FadeIn delay={200} className="flex justify-center">
           <LandingButton
             variant="appstore"
             size="lg"
@@ -45,4 +42,3 @@ export default function DownloadSection() {
     </section>
   );
 }
-

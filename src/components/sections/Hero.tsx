@@ -1,15 +1,8 @@
 "use client";
 
-import LandingButton from "@/components/ui/LandingButton";
 import FadeIn from "@/components/ui/FadeIn";
-import {
-  Download,
-  Leaf,
-  Footprints,
-  Heart,
-  Activity,
-  Pause,
-} from "lucide-react";
+import LandingButton from "@/components/ui/LandingButton";
+import { Activity, Footprints, Heart, Leaf, Pause } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -22,11 +15,13 @@ export default function Hero() {
 
       <div className="container max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center px-6 relative z-10">
         {/* Left: Text Content */}
-        <div className="flex flex-col items-center lg:items-start text-center lg:text-left order-2 lg:order-1">
+        <div className="flex flex-col items-center lg:items-start text-center lg:text-left order-2 lg:order-1 lg:pl-4">
           <FadeIn delay={100}>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#212121] leading-[1.3] mb-6">
-              簡単に続く、<br />
-              ウォーキング習慣で<br />
+              簡単に続く、
+              <br />
+              ウォーキング習慣で
+              <br />
               健康な毎日を始めよう
             </h1>
           </FadeIn>
@@ -40,16 +35,13 @@ export default function Hero() {
 
           <FadeIn
             delay={500}
-            className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto items-center"
+            className="w-full flex justify-center lg:justify-center"
           >
             <LandingButton
-              variant="primary"
+              variant="appstore"
               size="lg"
-              className="sm:w-auto gap-2 shadow-xl shadow-[#8BC34A]/30 pl-8 pr-6"
-            >
-              無料でダウンロード <Download size={20} />
-            </LandingButton>
-            <LandingButton variant="appstore" size="lg" className="sm:w-auto shadow-xl" />
+              className="w-full sm:w-auto shadow-xl"
+            />
           </FadeIn>
         </div>
 
@@ -139,7 +131,9 @@ export default function Hero() {
                       <div className="text-3xl font-bold text-gray-800 tabular-nums">
                         00:02:33
                       </div>
-                      <div className="text-[10px] text-gray-400 mt-1">Timer</div>
+                      <div className="text-[10px] text-gray-400 mt-1">
+                        Timer
+                      </div>
                     </div>
 
                     {/* Play/Pause Button mini */}
@@ -285,4 +279,3 @@ export default function Hero() {
     </section>
   );
 }
-
