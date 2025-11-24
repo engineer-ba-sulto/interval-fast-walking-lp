@@ -33,6 +33,6 @@ bun install
 
 ### データベースの接続
 
-`binding`の`waitlist_lp_template_db`を検索して、新たに作成した DB の`binding`に変更してください。
+`binding`の`interval_fast_walking_lp_db`を検索して、新たに作成した DB の`binding`に変更してください。
 
 `BETTER_AUTH_SECRET=`の発行方法を追加する

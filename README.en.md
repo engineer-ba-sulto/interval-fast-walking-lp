@@ -135,7 +135,7 @@ npx wrangler d1 migrations apply <YOUR_DATABASE_NAME>
 
 Update the `src/drizzle/db.ts` file to connect to the database using the binding name you configured in `wrangler.jsonc`.
 
-Replace `waitlist_lp_template_db` in `env.waitlist_lp_template_db` with `<YOUR_DATABASE_BINDING_NAME>`.
+Replace `interval_fast_walking_lp_db` in `env.interval_fast_walking_lp_db` with `<YOUR_DATABASE_BINDING_NAME>`.
 
 **Before:** `src/drizzle/db.ts`
 
@@ -143,7 +143,7 @@ Replace `waitlist_lp_template_db` in `env.waitlist_lp_template_db` with `<YOUR_D
 // ...
 export const getDb = async () => {
   const { env } = await getCloudflareContext({ async: true });
-  return drizzle(env.waitlist_lp_template_db);
+  return drizzle(env.interval_fast_walking_lp_db);
 };
 // ...
 ```
