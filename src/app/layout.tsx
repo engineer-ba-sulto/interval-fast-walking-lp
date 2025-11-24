@@ -7,28 +7,38 @@ import "./globals.css";
 
 const notoSansJP = Noto_Sans_JP({
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | Waitlist LP Template",
-    default: "Waitlist LP Template",
+    template: "%s | インターバル速歩",
+    default: "インターバル速歩 - 健康な毎日を始めよう",
   },
   metadataBase: new URL(await getBaseUrl()),
-  description: "Waitlist LP Template",
-  keywords: [],
+  description:
+    "運動習慣を身につけたいあなたへ。あなたに最適なウォーキングプランを自動提案。シンプルで続けやすく、年配の方にも安心。",
+  keywords: [
+    "インターバル速歩",
+    "ウォーキング",
+    "健康",
+    "運動習慣",
+    "タイマーアプリ",
+    "歩時間",
+  ],
   openGraph: {
-    title: "Waitlist LP Template",
-    description: "Waitlist LP Template",
+    title: "インターバル速歩 - 健康な毎日を始めよう",
+    description:
+      "運動習慣を身につけたいあなたへ。あなたに最適なウォーキングプランを自動提案。シンプルで続けやすく、年配の方にも安心。",
     type: "website",
     locale: "ja_JP",
     images: ["/opengraph-image.png", "/opengraph-image.jpg"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Waitlist LP Template",
-    description: "Waitlist LP Template",
+    title: "インターバル速歩 - 健康な毎日を始めよう",
+    description:
+      "運動習慣を身につけたいあなたへ。あなたに最適なウォーキングプランを自動提案。シンプルで続けやすく、年配の方にも安心。",
     images: ["/opengraph-image.png", "/opengraph-image.jpg"],
   },
 };
