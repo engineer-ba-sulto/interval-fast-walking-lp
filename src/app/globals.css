@@ -41,6 +41,35 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  
+  /* Brand Colors */
+  --color-brand-bg-start: #C8E6C9;
+  --color-brand-bg-end: #E8F5E9;
+  --color-brand-primary-light: #8BC34A;
+  --color-brand-primary-dark: #558B2F;
+  --color-brand-accent: #FFC107;
+  --color-brand-text-main: #212121;
+  --color-brand-text-sub: #757575;
+  --color-brand-link: #007AFF;
+  
+  /* Brand Gradients */
+  --gradient-brand: linear-gradient(135deg, #C8E6C9 0%, #E8F5E9 60%, #F1F8E9 100%);
+  --gradient-btn: linear-gradient(to bottom, #8BC34A, #558B2F);
+  
+  /* Animations */
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-float-delayed: float 6s ease-in-out 3s infinite;
+  --animate-float-slow: float 8s ease-in-out 1s infinite;
+  --animate-spin-slow: spin 30s linear infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
 }
 
 :root {
@@ -118,5 +147,66 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+  
+  /* Custom scrollbar for better aesthetics */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  
+  /* Selection styling */
+  ::selection {
+    background-color: var(--color-brand-primary-light);
+    color: white;
+  }
+}
+
+@layer utilities {
+  .bg-brand-gradient {
+    background: var(--gradient-brand);
+  }
+  
+  .bg-btn-gradient {
+    background: var(--gradient-btn);
+  }
+  
+  .animate-float {
+    animation: var(--animate-float);
+  }
+  
+  .animate-float-delayed {
+    animation: var(--animate-float-delayed);
+  }
+  
+  .animate-float-slow {
+    animation: var(--animate-float-slow);
+  }
+  
+  .animate-spin-slow {
+    animation: var(--animate-spin-slow);
+  }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .duration-600 {
+    transition-duration: 600ms;
   }
 }
