@@ -1,5 +1,3 @@
-"use client";
-
 import FadeIn from "@/components/ui/FadeIn";
 import { Timer, Footprints, BarChart3, MousePointerClick } from "lucide-react";
 

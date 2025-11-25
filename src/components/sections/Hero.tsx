@@ -1,5 +1,3 @@
-"use client";
-
 import FadeIn from "@/components/ui/FadeIn";
 import LandingButton from "@/components/ui/LandingButton";
 import { Footprints, Heart, Leaf } from "lucide-react";
