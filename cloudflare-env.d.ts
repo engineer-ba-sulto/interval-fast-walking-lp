@@ -5,7 +5,7 @@ declare namespace Cloudflare {
   interface Env {
     NEXTJS_ENV: string;
     ASSETS: Fetcher;
-    waitlist_lp_template_db: D1Database;
+    interval_fast_walking_lp_db: D1Database;
     CF_PAGES_URL: string;
   }
 }

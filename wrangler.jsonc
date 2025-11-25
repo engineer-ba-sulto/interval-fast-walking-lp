@@ -4,7 +4,7 @@
  */
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "waitlist-lp-template",
+  "name": "interval-fast-walking-lp",
   "main": ".open-next/worker.js",
   "compatibility_date": "2025-03-01",
   "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
@@ -17,8 +17,8 @@
   },
   "d1_databases": [
     {
-      "binding": "waitlist_lp_template_db",
-      "database_name": "waitlist-lp-template-db",
+      "binding": "interval_fast_walking_lp_db",
+      "database_name": "interval-fast-walking-lp-db",
       "database_id": "e6835535-8eb9-4ea2-91cc-4503dcf64a1e",
       "migrations_dir": "src/drizzle/migrations"
     }
