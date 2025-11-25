@@ -26,7 +26,7 @@ export default function Problem() {
           <div className="flex flex-col md:flex-row items-center justify-center gap-10 lg:gap-16">
             {/* Illustration */}
             <div className="w-full md:w-1/2 flex justify-center md:justify-end">
-              <div className="w-full max-w-[420px] aspect-[5/4] relative">
+              <div className="w-full max-w-[420px] aspect-5/4 relative">
                 {/* Custom SVG Illustration: Walking up a wavy 3D path */}
                 <svg
                   viewBox="0 0 500 400"
@@ -124,7 +124,8 @@ export default function Problem() {
             {/* Content */}
             <div className="w-full md:w-1/2 text-center md:text-left">
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 mb-8 leading-snug">
-                運動習慣、<br />
+                運動習慣、
+                <br />
                 何度も
                 <span className="relative inline-block text-[#5D4037]">
                   挫折
@@ -137,17 +138,16 @@ export default function Problem() {
                 <p>
                   「時間がなくて続かない」「一人ではモチベーションが保てない」「激しい運動は苦手」...
                 </p>
-                <p>
-                  そんな風に感じて、何度も運動を始めては諦めていませんか？
-                </p>
+                <p>そんな風に感じて、何度も運動を始めては諦めていませんか？</p>
                 <p className="font-bold text-gray-800 text-xl">
-                  あなたのせいではありません。<br />
+                  あなたのせいではありません。
+                  <br />
                   多くの人が同じ悩みを抱えています。
                 </p>
               </div>
 
               {/* Decorative line */}
-              <div className="mt-8 h-1 w-24 bg-gradient-to-r from-[#cfd8dc] to-transparent mx-auto md:mx-0 rounded-full"></div>
+              <div className="mt-8 h-1 w-24 bg-linear-to-r from-[#cfd8dc] to-transparent mx-auto md:mx-0 rounded-full"></div>
             </div>
           </div>
         </FadeIn>
@@ -155,4 +155,3 @@ export default function Problem() {
     </section>
   );
 }
-

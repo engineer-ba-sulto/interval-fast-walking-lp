@@ -1,10 +1,10 @@
 import FadeIn from "@/components/ui/FadeIn";
 import {
-  UserCheck,
-  Heart,
   Footprints,
+  Heart,
   HelpCircle,
   Smartphone,
+  UserCheck,
 } from "lucide-react";
 
 const targets = [
@@ -40,7 +40,7 @@ export default function TargetUsers() {
     <section className="py-20 md:py-32 bg-brand-gradient">
       <div className="container mx-auto px-6">
         <FadeIn>
-          <h2 className="text-2xl md:text-4xl font-bold text-[#212121] text-center mb-16">
+          <h2 className="text-2xl md:text-4xl font-bold text-brand-text-main text-center mb-16">
             こんな方におすすめです
           </h2>
         </FadeIn>
@@ -49,13 +49,13 @@ export default function TargetUsers() {
           {targets.map((target, index) => (
             <FadeIn key={index} delay={index * 100}>
               <div className="bg-white p-6 rounded-xl shadow-sm h-full flex flex-col items-center text-center hover:shadow-md transition-all">
-                <div className="w-14 h-14 bg-[#E8F5E9] text-[#558B2F] rounded-full flex items-center justify-center mb-4">
+                <div className="w-14 h-14 bg-brand-bg-end text-brand-primary-dark rounded-full flex items-center justify-center mb-4">
                   {target.icon}
                 </div>
-                <h3 className="font-bold text-[#212121] mb-3 text-lg">
+                <h3 className="font-bold text-brand-text-main mb-3 text-lg">
                   {target.title}
                 </h3>
-                <p className="text-sm text-[#757575] leading-relaxed">
+                <p className="text-sm text-brand-text-sub leading-relaxed">
                   {target.description}
                 </p>
               </div>
@@ -66,4 +66,3 @@ export default function TargetUsers() {
     </section>
   );
 }
-
