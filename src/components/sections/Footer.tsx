@@ -1,5 +1,3 @@
-"use client";
-
 import { Twitter, Youtube } from "lucide-react";
 
 export default function Footer() {
@@ -73,4 +71,3 @@ export default function Footer() {
     </footer>
   );
 }
-

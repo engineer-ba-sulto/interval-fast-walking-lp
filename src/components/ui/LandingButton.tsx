@@ -1,13 +1,14 @@
 "use client";
 
-import { Download } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Download } from "lucide-react";
 
 interface LandingButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "primary" | "secondary" | "outline" | "appstore";
   size?: "sm" | "md" | "lg";
   fullWidth?: boolean;
+  href?: string;
 }
 
 export default function LandingButton({
@@ -16,6 +17,7 @@ export default function LandingButton({
   size = "md",
   fullWidth = false,
   className = "",
+  href,
   ...props
 }: LandingButtonProps) {
   const baseStyles =
@@ -25,7 +27,8 @@ export default function LandingButton({
     primary: "bg-btn-gradient text-white hover:shadow-xl",
     secondary:
       "bg-white text-[#558B2F] border border-[#558B2F] hover:bg-gray-50",
-    outline: "bg-transparent border-2 border-white text-white hover:bg-white/10",
+    outline:
+      "bg-transparent border-2 border-white text-white hover:bg-white/10",
     appstore: "bg-black text-white hover:bg-gray-900",
   };
 
@@ -38,23 +41,44 @@ export default function LandingButton({
   const widthClass = fullWidth ? "w-full" : "";
 
   if (variant === "appstore") {
-    return (
-      <button
-        className={cn(
-          baseStyles,
-          variants.appstore,
-          sizes[size],
-          widthClass,
-          className,
-          "flex-row gap-2"
-        )}
-        {...props}
-      >
+    const buttonContent = (
+      <>
         <Download size={20} />
         <div className="flex flex-col items-start leading-none">
           <span className="text-[10px] font-medium">App Storeで</span>
           <span className="text-sm font-bold">ダウンロード</span>
         </div>
+      </>
+    );
+
+    const commonProps = {
+      className: cn(
+        baseStyles,
+        variants.appstore,
+        sizes[size],
+        widthClass,
+        className,
+        "flex-row gap-2"
+      ),
+    };
+
+    // hrefが指定されている場合は<a>タグ、そうでない場合は<button>タグ
+    if (href) {
+      return (
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          {...commonProps}
+        >
+          {buttonContent}
+        </a>
+      );
+    }
+
+    return (
+      <button {...commonProps} {...props}>
+        {buttonContent}
       </button>
     );
   }
@@ -74,4 +98,3 @@ export default function LandingButton({
     </button>
   );
 }
-

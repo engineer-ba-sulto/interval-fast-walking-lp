@@ -1,12 +1,10 @@
-"use client";
-
 import FadeIn from "@/components/ui/FadeIn";
 import {
-  Smartphone,
-  Download,
   ClipboardCheck,
-  Timer,
+  Download,
   Footprints,
+  Smartphone,
+  Timer,
 } from "lucide-react";
 
 const steps = [
@@ -46,7 +44,7 @@ const steps = [
           strokeWidth={1.5}
         />
         <div className="absolute -top-2 -right-1 bg-white rounded-full p-0.5 shadow-sm">
-          <Timer size={20} className="text-[#558B2F]" />
+          <Timer size={20} className="text-brand-primary-dark" />
         </div>
       </div>
     ),
@@ -62,7 +60,7 @@ export default function HowToUse() {
       <div className="container mx-auto px-6 relative">
         <FadeIn>
           <div className="text-center mb-24 relative">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#212121] inline-block relative z-10">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-brand-text-main inline-block relative z-10">
               3ステップで始められる、簡単な使い方
             </h2>
             {/* Brush stroke underline effect */}
@@ -70,7 +68,7 @@ export default function HowToUse() {
               <svg viewBox="0 0 200 9" fill="none" className="w-full h-full">
                 <path
                   d="M2.00025 6.99997C48.3336 2.66664 139 -3.50003 198 3.49997"
-                  stroke="#C8E6C9"
+                  stroke="brand-bg-start"
                   strokeWidth="4"
                   strokeLinecap="round"
                 />
@@ -88,7 +86,7 @@ export default function HowToUse() {
                   <svg
                     viewBox="0 0 100 40"
                     fill="none"
-                    className="w-full h-full text-[#C8E6C9]"
+                    className="w-full h-full text-brand-bg-start"
                   >
                     <path
                       d="M0 15 Q 50 35 100 15"
@@ -110,25 +108,25 @@ export default function HowToUse() {
 
               {/* Connector line for mobile (vertical) */}
               {index < steps.length - 1 && (
-                <div className="md:hidden absolute bottom-[-40px] left-1/2 transform -translate-x-1/2 h-10 border-l-2 border-dashed border-[#C8E6C9] z-0"></div>
+                <div className="md:hidden absolute bottom-[-40px] left-1/2 transform -translate-x-1/2 h-10 border-l-2 border-dashed border-brand-bg-start z-0"></div>
               )}
 
               <FadeIn delay={index * 200} className="h-full">
-                <div className="bg-white rounded-[2rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] h-full flex flex-col items-center text-center relative z-10 border border-white transition-transform duration-300 hover:-translate-y-1">
+                <div className="bg-white rounded-4xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] h-full flex flex-col items-center text-center relative z-10 border border-white transition-transform duration-300 hover:-translate-y-1">
                   {/* Number Badge */}
-                  <div className="absolute -top-5 -left-3 w-16 h-16 rounded-full bg-gradient-to-br from-[#A5D6A7] to-[#66BB6A] flex items-center justify-center text-white text-3xl font-bold shadow-lg border-[3px] border-white z-20">
+                  <div className="absolute -top-5 -left-3 w-16 h-16 rounded-full bg-linear-to-br from-[#A5D6A7] to-[#66BB6A] flex items-center justify-center text-white text-3xl font-bold shadow-lg border-[3px] border-white z-20">
                     <span className="drop-shadow-sm font-sans">{step.id}</span>
                   </div>
 
                   {/* Icon Circle */}
-                  <div className="mt-6 mb-6 w-24 h-24 bg-[#F1F8E9] rounded-full flex items-center justify-center border border-[#DCEDC8]">
+                  <div className="mt-6 mb-6 w-24 h-24 bg-brand-bg-end rounded-full flex items-center justify-center border border-brand-bg-start">
                     {step.icon}
                   </div>
 
-                  <h3 className="text-lg font-bold text-[#212121] mb-4 min-h-[1.5rem] flex items-center justify-center">
+                  <h3 className="text-lg font-bold text-brand-text-main mb-4 min-h-6 flex items-center justify-center">
                     {step.title}
                   </h3>
-                  <p className="text-sm text-[#757575] leading-relaxed">
+                  <p className="text-sm text-brand-text-sub leading-relaxed">
                     {step.description}
                   </p>
                 </div>
@@ -140,4 +138,3 @@ export default function HowToUse() {
     </section>
   );
 }
-

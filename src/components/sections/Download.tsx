@@ -1,13 +1,11 @@
-"use client";
-
 import FadeIn from "@/components/ui/FadeIn";
 import LandingButton from "@/components/ui/LandingButton";
 
 export default function DownloadSection() {
   return (
-    <section className="py-24 md:py-32 bg-[#558B2F] relative overflow-hidden">
+    <section className="py-24 md:py-32 bg-brand-primary-light relative overflow-hidden">
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/20 pointer-events-none"></div>
+      <div className="absolute inset-0 bg-linear-to-b from-transparent to-brand-primary-light/20 pointer-events-none"></div>
 
       <div className="container mx-auto px-6 relative z-10 text-center">
         <FadeIn>
@@ -27,6 +25,7 @@ export default function DownloadSection() {
 
         <FadeIn delay={200} className="flex justify-center">
           <LandingButton
+            href="https://apps.apple.com/jp/app/id6755136927"
             variant="appstore"
             size="lg"
             className="border-2 border-white/20 shadow-2xl"

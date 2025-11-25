@@ -1,128 +1,116 @@
-"use client";
-
 import FadeIn from "@/components/ui/FadeIn";
 
 export default function Solution() {
   return (
-    <section className="py-20 md:py-32 bg-white flex justify-center items-center">
-      <div className="container mx-auto px-6">
-        <FadeIn>
-          <div className="relative w-full max-w-[1100px] mx-auto rounded-[3rem] overflow-hidden bg-gradient-to-br from-[#E8F5E9] to-[#C8E6C9] shadow-xl md:p-24 p-10 flex flex-col items-center text-center isolate">
-            {/* Background Texture Layers (Watercolor effect) */}
-            <div className="absolute inset-0 z-[-1] opacity-60 mix-blend-multiply pointer-events-none">
-              <div className="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] bg-[#A5D6A7] rounded-full blur-[80px] opacity-40"></div>
-              <div className="absolute bottom-[-20%] right-[-10%] w-[500px] h-[500px] bg-[#81C784] rounded-full blur-[80px] opacity-30"></div>
-              <div className="absolute top-[30%] right-[20%] w-[300px] h-[300px] bg-[#C8E6C9] rounded-full blur-[60px] opacity-50"></div>
+    <section className="relative py-20 md:py-32 bg-[#F1F8F4] flex justify-center items-center overflow-hidden">
+      {/* Background Texture Layers (Watercolor effect) */}
+      <div className="absolute inset-0 z-0 opacity-70 mix-blend-multiply pointer-events-none">
+        {/* Watercolor splotches */}
+        <div className="absolute top-[-15%] left-[-8%] w-[600px] h-[600px] bg-[#A5D6A7] rounded-full blur-[100px] opacity-30"></div>
+        <div className="absolute bottom-[-15%] right-[-8%] w-[500px] h-[500px] bg-[#81C784] rounded-full blur-[100px] opacity-25"></div>
+        <div className="absolute top-[25%] right-[15%] w-[350px] h-[350px] bg-brand-bg-start rounded-full blur-[80px] opacity-35"></div>
 
-              {/* Subtle lines */}
+        {/* Subtle wavy lines */}
+        <svg
+          className="absolute inset-0 w-full h-full opacity-15"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0,80 Q 200,60 400,80 T 800,80 T 1200,80"
+            fill="none"
+            stroke="#4CAF50"
+            strokeWidth="1.5"
+          />
+          <path
+            d="M0,180 Q 300,160 600,180 T 1200,180"
+            fill="none"
+            stroke="#4CAF50"
+            strokeWidth="1.5"
+          />
+          <path
+            d="M0,280 Q 250,260 500,280 T 1000,280 T 1200,280"
+            fill="none"
+            stroke="#4CAF50"
+            strokeWidth="1.5"
+          />
+        </svg>
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
+        <FadeIn>
+          <div className="flex flex-col items-center max-w-4xl mx-auto text-center">
+            {/* Custom Icon: Person walking with upward arrow */}
+            <div className="mb-10 w-28 h-28 md:w-36 md:h-36">
               <svg
-                className="absolute inset-0 w-full h-full opacity-20"
-                preserveAspectRatio="none"
+                viewBox="0 0 100 100"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-full h-full"
               >
+                <defs>
+                  <linearGradient
+                    id="iconGradient"
+                    x1="0"
+                    y1="0"
+                    x2="100"
+                    y2="100"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop stopColor="#66BB6A" />
+                    <stop offset="1" stopColor="#4CAF50" />
+                  </linearGradient>
+                </defs>
+
+                {/* Arrow curving up from behind person */}
                 <path
-                  d="M0,100 C300,50 600,150 1200,100"
+                  d="M15 70 Q 45 70, 75 30"
+                  stroke="url(#iconGradient)"
+                  strokeWidth="7"
+                  strokeLinecap="round"
                   fill="none"
-                  stroke="#4CAF50"
-                  strokeWidth="1"
                 />
+                {/* Arrow head */}
                 <path
-                  d="M0,200 C400,150 800,250 1200,200"
+                  d="M60 30 L 75 30 L 75 45"
+                  stroke="url(#iconGradient)"
+                  strokeWidth="7"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   fill="none"
-                  stroke="#4CAF50"
-                  strokeWidth="1"
                 />
+
+                {/* Person Walking */}
+                <g transform="translate(50, 30)">
+                  {/* Head */}
+                  <circle cx="0" cy="-8" r="8" fill="url(#iconGradient)" />
+                  {/* Body and limbs */}
+                  <path
+                    d="M0 0 L 0 20 M 0 3 L -5 10 M 0 3 L 5 10 M 0 20 L -3 32 M 0 20 L 3 32"
+                    stroke="url(#iconGradient)"
+                    strokeWidth="4"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    fill="none"
+                  />
+                </g>
               </svg>
             </div>
 
-            <div className="flex flex-col items-center max-w-4xl relative z-10">
-              {/* Custom Icon: Person walking up arrow */}
-              <div className="mb-8 w-24 h-24 md:w-32 md:h-32 drop-shadow-lg transform hover:scale-105 transition-transform duration-500">
-                <svg
-                  viewBox="0 0 100 100"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-full h-full"
-                >
-                  <defs>
-                    <linearGradient
-                      id="iconGradient"
-                      x1="0"
-                      y1="100"
-                      x2="100"
-                      y2="0"
-                      gradientUnits="userSpaceOnUse"
-                    >
-                      <stop stopColor="#66BB6A" />
-                      <stop offset="1" stopColor="#A5D6A7" />
-                    </linearGradient>
-                    <filter
-                      id="glow"
-                      x="-20%"
-                      y="-20%"
-                      width="140%"
-                      height="140%"
-                    >
-                      <feGaussianBlur stdDeviation="2" result="blur" />
-                      <feComposite
-                        in="SourceGraphic"
-                        in2="blur"
-                        operator="over"
-                      />
-                    </filter>
-                  </defs>
+            {/* Title */}
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-black mb-8 leading-tight tracking-tight">
+              あなたの運動習慣を成功に導く
+              <br className="block" />
+              シンプルな解決方法
+            </h2>
 
-                  {/* Arrow curving up */}
-                  <path
-                    d="M20 75 Q 50 75, 80 35"
-                    stroke="url(#iconGradient)"
-                    strokeWidth="8"
-                    strokeLinecap="round"
-                  />
-                  <path
-                    d="M65 35 L 80 35 L 80 50"
-                    stroke="url(#iconGradient)"
-                    strokeWidth="8"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-
-                  {/* Person Walking */}
-                  <g transform="translate(50, 35)">
-                    <circle
-                      cx="5"
-                      cy="-5"
-                      r="7"
-                      fill="url(#iconGradient)"
-                      stroke="white"
-                      strokeWidth="1.5"
-                    />
-                    <path
-                      d="M5 2 L 5 17 M 5 5 L -3 10 M 5 5 L 13 10 M 5 17 L -1 27 M 5 17 L 11 25"
-                      stroke="url(#iconGradient)"
-                      strokeWidth="3.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </g>
-                </svg>
-              </div>
-
-              {/* Title */}
-              <h2 className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-[#1B5E20] mb-8 leading-tight drop-shadow-sm tracking-tight">
-                あなたの運動習慣を成功に導く、<br className="block" />
-                シンプルな解決方法
-              </h2>
-
-              {/* Description */}
-              <p className="text-[#3E4E3F] text-base md:text-lg leading-loose font-medium max-w-3xl opacity-90">
-                インターバル速歩は、ウォーキングを誰でも簡単に、効果的で、持続可能なものにします。
-                あなたの現在のフィットネスレベルに関わらず、健康的でアクティブな生活への第一歩をサポートします。
-              </p>
-            </div>
+            {/* Description */}
+            <p className="text-black text-base md:text-lg leading-relaxed font-medium max-w-3xl opacity-90">
+              インターバル速歩は、ウォーキングを誰でも簡単に、効果的で、持続可能なものにします。
+              あなたの現在のフィットネスレベルに関わらず、健康的でアクティブな生活への第一歩をサポートします。
+            </p>
           </div>
         </FadeIn>
       </div>
     </section>
   );
 }
-
