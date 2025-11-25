@@ -39,6 +39,7 @@ export default function Hero() {
             className="w-full flex justify-center lg:justify-center"
           >
             <LandingButton
+              href="https://apps.apple.com/jp/app/id6755136927"
               variant="appstore"
               size="lg"
               className="w-full sm:w-auto shadow-xl"
