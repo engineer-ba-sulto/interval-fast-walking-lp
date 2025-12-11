@@ -10,6 +10,7 @@ import Solution from "@/components/sections/Solution";
 import TargetUsers from "@/components/sections/TargetUsers";
 import StickyCTA from "@/components/StickyCTA";
 import type { Metadata } from "next";
+import Contact from "@/components/sections/Contact";
 
 export const metadata: Metadata = {
   title: "インターバル速歩 - 健康な毎日を始めよう",
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white font-sans text-[#212121] selection:bg-[#8BC34A] selection:text-white">
+    <div className="min-h-screen bg-white font-sans text-brand-text-main selection:bg-brand-primary-light selection:text-white">
       <main>
         <Hero />
         <Problem />
@@ -28,6 +29,7 @@ export default function Home() {
         <Screenshots />
         <HowToUse />
         <TargetUsers />
+        <Contact />
         <DownloadSection />
         <FAQ />
       </main>
