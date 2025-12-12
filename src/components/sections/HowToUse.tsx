@@ -1,4 +1,3 @@
-import FadeIn from "@/components/ui/FadeIn";
 import {
   ClipboardCheck,
   Download,
@@ -6,6 +5,7 @@ import {
   Smartphone,
   Timer,
 } from "lucide-react";
+import FadeIn from "@/components/ui/FadeIn";
 
 const steps = [
   {
@@ -66,6 +66,7 @@ export default function HowToUse() {
             {/* Brush stroke underline effect */}
             <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-full max-w-sm h-3 z-0 opacity-70">
               <svg viewBox="0 0 200 9" fill="none" className="w-full h-full">
+                <title>Brush stroke underline effect</title>
                 <path
                   d="M2.00025 6.99997C48.3336 2.66664 139 -3.50003 198 3.49997"
                   stroke="brand-bg-start"
@@ -88,6 +89,7 @@ export default function HowToUse() {
                     fill="none"
                     className="w-full h-full text-brand-bg-start"
                   >
+                    <title>Connector arrow for desktop</title>
                     <path
                       d="M0 15 Q 50 35 100 15"
                       stroke="currentColor"

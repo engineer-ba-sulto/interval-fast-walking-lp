@@ -1,6 +1,6 @@
-import { getCurrentDateInJST } from "@/lib/date";
 import { integer, sqliteTable, text } from "drizzle-orm/sqlite-core";
 import { nanoid } from "nanoid";
+import { getCurrentDateInJST } from "@/lib/date";
 
 export const contactsTable = sqliteTable("contacts_table", {
   id: text("id")

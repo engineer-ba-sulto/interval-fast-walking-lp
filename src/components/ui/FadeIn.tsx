@@ -29,7 +29,7 @@ export default function FadeIn({
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     const currentElement = domRef.current;
@@ -61,4 +61,3 @@ export default function FadeIn({
     </div>
   );
 }
-

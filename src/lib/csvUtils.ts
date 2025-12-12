@@ -1,5 +1,5 @@
-import { type Waitlist } from "@/types/waitlist";
 import { format } from "date-fns";
+import type { Waitlist } from "@/types/waitlist";
 
 /**
  * CSVの値をエスケープする
@@ -30,7 +30,7 @@ export function convertWaitlistToCsv(data: Waitlist[]): string {
   const rows = data.map((record) => {
     const email = escapeCsvValue(record.email);
     const createdAt = escapeCsvValue(
-      format(new Date(record.createdAt), "yyyy-MM-dd HH:mm:ss")
+      format(new Date(record.createdAt), "yyyy-MM-dd HH:mm:ss"),
     );
     return [email, createdAt];
   });

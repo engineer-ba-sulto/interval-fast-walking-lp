@@ -2,7 +2,7 @@
 
 import { getDb } from "@/drizzle/db";
 import { contactsTable } from "@/drizzle/schema/contactSchema";
-import { type ContactFormPayload } from "@/types/contact";
+import type { ContactFormPayload } from "@/types/contact";
 
 export async function addContact(data: ContactFormPayload) {
   try {
@@ -37,7 +37,8 @@ export async function addContact(data: ContactFormPayload) {
           return {
             success: false as const,
             error: "database",
-            message: "データベースエラーが発生しました。もう一度お試しください。",
+            message:
+              "データベースエラーが発生しました。もう一度お試しください。",
           };
         }
       }

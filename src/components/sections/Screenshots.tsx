@@ -1,9 +1,9 @@
 "use client";
 
-import FadeIn from "@/components/ui/FadeIn";
-import { screenshots } from "@/constants/screenshots";
 import Image from "next/image";
 import { useRef } from "react";
+import FadeIn from "@/components/ui/FadeIn";
+import { screenshots } from "@/constants/screenshots";
 
 export default function Screenshots() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -30,9 +30,9 @@ export default function Screenshots() {
           className="flex overflow-x-auto space-x-8 px-6 pt-4 pb-12 md:justify-center scrollbar-hide snap-x snap-mandatory"
           style={{ scrollBehavior: "smooth" }}
         >
-          {screenshots.map((shot, index) => (
+          {screenshots.map((shot) => (
             <div
-              key={index}
+              key={shot.alt}
               className="shrink-0 w-[260px] md:w-[280px] snap-center group pt-4"
             >
               <Image

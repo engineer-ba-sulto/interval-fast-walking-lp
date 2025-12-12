@@ -1,10 +1,10 @@
 "use server";
 
-import { getDb } from "@/drizzle/db";
-import { waitlistTable } from "@/drizzle/schema/waitlistSchema";
-import { type Waitlist, type WaitlistForm } from "@/types/waitlist";
 import { desc } from "drizzle-orm";
 import { redirect } from "next/navigation";
+import { getDb } from "@/drizzle/db";
+import { waitlistTable } from "@/drizzle/schema/waitlistSchema";
+import type { Waitlist, WaitlistForm } from "@/types/waitlist";
 
 export async function getWaitlist(): Promise<Waitlist[]> {
   try {

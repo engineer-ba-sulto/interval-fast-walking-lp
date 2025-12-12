@@ -1,8 +1,8 @@
-import { getBaseUrl } from "@/lib/url-utils";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import type { Metadata } from "next";
 import { Noto_Sans_JP } from "next/font/google";
 import { Toaster } from "sonner";
+import { getBaseUrl } from "@/lib/url-utils";
 import "./globals.css";
 
 const notoSansJP = Noto_Sans_JP({

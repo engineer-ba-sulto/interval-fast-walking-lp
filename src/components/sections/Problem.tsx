@@ -10,6 +10,7 @@ export default function Problem() {
           preserveAspectRatio="none"
           viewBox="0 0 1440 800"
         >
+          <title>Background Pattern - Subtle Waves</title>
           <path
             d="M0,300 C200,400 400,200 600,350 C800,500 1000,300 1200,400 C1300,450 1440,350 1440,350 V800 H0 Z"
             fill="#F0F0F0"
@@ -33,6 +34,7 @@ export default function Problem() {
                   className="w-full h-full drop-shadow-lg"
                   xmlns="http://www.w3.org/2000/svg"
                 >
+                  <title>Walking up a wavy 3D path</title>
                   <defs>
                     <linearGradient
                       id="arrowGrad"
