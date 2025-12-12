@@ -8,6 +8,13 @@
       "when": 1761551624690,
       "tag": "0000_lowly_random",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1765501302976,
+      "tag": "0001_smiling_millenium_guard",
+      "breakpoints": true
     }
   ]
 }

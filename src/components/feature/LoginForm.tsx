@@ -1,5 +1,9 @@
 "use client";
 
+import { zodResolver } from "@hookform/resolvers/zod";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { Controller, useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -20,12 +24,8 @@ import { Spinner } from "@/components/ui/spinner";
 import { signInWithEmail } from "@/lib/auth/authUtils";
 import { isEmailAddressAllowed } from "@/lib/auth/domainUtils";
 import { cn } from "@/lib/utils";
-import { type SignInEmail } from "@/types/auth";
+import type { SignInEmail } from "@/types/auth";
 import { signInEmailSchema } from "@/zod/auth.schema";
-import { zodResolver } from "@hookform/resolvers/zod";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { Controller, useForm } from "react-hook-form";
 
 export function LoginForm({
   className,

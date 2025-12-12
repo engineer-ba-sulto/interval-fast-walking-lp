@@ -1,7 +1,7 @@
-import FadeIn from "@/components/ui/FadeIn";
-import LandingButton from "@/components/ui/LandingButton";
 import { Footprints, Heart, Leaf } from "lucide-react";
 import Image from "next/image";
+import FadeIn from "@/components/ui/FadeIn";
+import LandingButton from "@/components/ui/LandingButton";
 
 export default function Hero() {
   return (
@@ -16,6 +16,10 @@ export default function Hero() {
         {/* Left: Text Content */}
         <div className="flex flex-col items-center lg:items-start text-center lg:text-left order-2 lg:order-1 lg:pl-4">
           <FadeIn delay={100}>
+            <span className="inline-flex items-center py-2 px-4 rounded-full bg-white text-brand-primary-dark font-bold text-sm sm:text-base mb-6 tracking-wide shadow-xl border border-brand-primary-light/20 transform hover:scale-105 transition-transform duration-300">
+              <span className="w-2 h-2 rounded-full bg-brand-accent mr-3 animate-pulse"></span>
+              インターバル速歩 - タイマーアプリ・歩時間（あるじかん）
+            </span>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-text-main leading-[1.3] mb-6">
               簡単に続く、
               <br />

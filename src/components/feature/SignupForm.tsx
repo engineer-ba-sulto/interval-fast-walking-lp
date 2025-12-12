@@ -1,5 +1,9 @@
 "use client";
 
+import { zodResolver } from "@hookform/resolvers/zod";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { Controller, useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -19,12 +23,8 @@ import { Input } from "@/components/ui/input";
 import { Spinner } from "@/components/ui/spinner";
 import { signUpWithEmail } from "@/lib/auth/authUtils";
 import { cn } from "@/lib/utils";
-import { type SignUpEmail } from "@/types/auth";
+import type { SignUpEmail } from "@/types/auth";
 import { signUpEmailSchema } from "@/zod/auth.schema";
-import { zodResolver } from "@hookform/resolvers/zod";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { Controller, useForm } from "react-hook-form";
 
 export function SignupForm({
   className,

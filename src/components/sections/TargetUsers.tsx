@@ -1,4 +1,3 @@
-import FadeIn from "@/components/ui/FadeIn";
 import {
   Footprints,
   Heart,
@@ -6,6 +5,7 @@ import {
   Smartphone,
   UserCheck,
 } from "lucide-react";
+import FadeIn from "@/components/ui/FadeIn";
 
 const targets = [
   {
@@ -47,7 +47,7 @@ export default function TargetUsers() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
           {targets.map((target, index) => (
-            <FadeIn key={index} delay={index * 100}>
+            <FadeIn key={target.title} delay={index * 100}>
               <div className="bg-white p-6 rounded-xl shadow-sm h-full flex flex-col items-center text-center hover:shadow-md transition-all">
                 <div className="w-14 h-14 bg-brand-bg-end text-brand-primary-dark rounded-full flex items-center justify-center mb-4">
                   {target.icon}

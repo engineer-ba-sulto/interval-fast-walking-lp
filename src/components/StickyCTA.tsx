@@ -25,10 +25,12 @@ export default function StickyCTA() {
         isVisible ? "translate-y-0" : "translate-y-full"
       }`}
     >
-      <LandingButton variant="primary" size="md" fullWidth className="shadow-lg">
-        無料でダウンロード
-      </LandingButton>
+      <LandingButton
+        href="https://apps.apple.com/jp/app/id6755136927"
+        variant="appstore"
+        size="lg"
+        className="w-full sm:w-auto shadow-xl"
+      />
     </div>
   );
 }
-

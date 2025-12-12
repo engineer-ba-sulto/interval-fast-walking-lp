@@ -1,5 +1,5 @@
+import type { Metadata } from "next";
 import { LoginForm } from "@/components/feature/LoginForm";
-import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Login",

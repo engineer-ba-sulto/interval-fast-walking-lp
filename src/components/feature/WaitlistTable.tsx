@@ -1,5 +1,7 @@
 "use client";
 
+import { format } from "date-fns";
+import { ja } from "date-fns/locale";
 import {
   Table,
   TableBody,
@@ -8,9 +10,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { type Waitlist } from "@/types/waitlist";
-import { format } from "date-fns";
-import { ja } from "date-fns/locale";
+import type { Waitlist } from "@/types/waitlist";
 
 export default function WaitlistTable({ data }: { data: Waitlist[] }) {
   if (data.length === 0) {

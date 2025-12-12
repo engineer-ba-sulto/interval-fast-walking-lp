@@ -1,5 +1,5 @@
-import { type SignInEmail, type SignUpEmail } from "@/types/auth";
-import { type UseFormSetError } from "react-hook-form";
+import type { UseFormSetError } from "react-hook-form";
+import type { SignInEmail, SignUpEmail } from "@/types/auth";
 import { authClient } from "./client";
 
 /**
@@ -10,7 +10,7 @@ import { authClient } from "./client";
  */
 export async function signInWithEmail(
   data: SignInEmail,
-  setError: UseFormSetError<SignInEmail>
+  setError: UseFormSetError<SignInEmail>,
 ): Promise<boolean> {
   try {
     const res = await authClient.signIn.email({
@@ -67,7 +67,7 @@ export async function signInWithEmail(
  */
 export async function signUpWithEmail(
   data: SignUpEmail,
-  setError: UseFormSetError<SignUpEmail>
+  setError: UseFormSetError<SignUpEmail>,
 ): Promise<boolean> {
   try {
     const res = await authClient.signUp.email({
