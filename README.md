@@ -264,7 +264,7 @@ npx wrangler d1 migrations apply <あなたのデータベース名>
 
 `src/drizzle/db.ts` ファイルを更新して、`wrangler.jsonc` で設定したバインディング名でデータベースに接続するようにします。
 
-`env.interval_fast_walking_lp_db` の `interval_fast_walking_lp_db` を、`<あなたのデータベースバインディング名>`に置き換えてください。
+`env.DB` の `DB` を、`<あなたのデータベースバインディング名>`に置き換えてください。
 
 **変更前:** `src/drizzle/db.ts`
 
@@ -272,7 +272,7 @@ npx wrangler d1 migrations apply <あなたのデータベース名>
 // ...
 export const getDb = async () => {
   const { env } = await getCloudflareContext({ async: true });
-  return drizzle(env.interval_fast_walking_lp_db);
+  return drizzle(env.DB);
 };
 // ...
 ```
