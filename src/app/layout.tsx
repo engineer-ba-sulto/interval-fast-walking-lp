@@ -13,7 +13,7 @@ const notoSansJP = Noto_Sans_JP({
 export const metadata: Metadata = {
   title: {
     template: "%s | インターバル速歩",
-    default: "インターバル速歩 - 健康な毎日を始めよう",
+    default: "インターバル速歩 - タイマーアプリ・歩時間（あるじかん）",
   },
   metadataBase: new URL(await getBaseUrl()),
   description:
