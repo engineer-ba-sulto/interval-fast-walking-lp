@@ -52,15 +52,15 @@ export default function Footer() {
 
         <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
           <div className="flex gap-4">
-            <a href="#" className="hover:text-gray-300 transition-colors">
+            <a href="/privacy-policy" className="hover:text-gray-300 transition-colors">
               プライバシーポリシー
             </a>
-            <a href="#" className="hover:text-gray-300 transition-colors">
+            <a href="/term-of-service" className="hover:text-gray-300 transition-colors">
               利用規約
             </a>
-            <a href="#" className="hover:text-gray-300 transition-colors">
+            {/* <a href="#" className="hover:text-gray-300 transition-colors">
               特定商取引法に基づく表記
-            </a>
+            </a> */}
           </div>
           <p>
             © 2025 インターバル速歩 - タイマーアプリ・歩時間. All rights
