@@ -1,7 +1,7 @@
-import FadeIn from "@/components/ui/FadeIn";
-import LandingButton from "@/components/ui/LandingButton";
 import { Footprints, Heart, Leaf } from "lucide-react";
 import Image from "next/image";
+import FadeIn from "@/components/ui/FadeIn";
+import LandingButton from "@/components/ui/LandingButton";
 
 export default function Hero() {
   return (

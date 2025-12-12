@@ -36,13 +36,13 @@ export default function Footer() {
           {/* SNS */}
           <div className="flex gap-4">
             <a
-              href="#"
+              href="https://x.com/engineer_ba_sulto"
               className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#007AFF] transition-colors text-white"
             >
               <Twitter size={20} />
             </a>
             <a
-              href="#"
+              href="https://www.youtube.com/@engineer_ba_sulto"
               className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-red-600 transition-colors text-white"
             >
               <Youtube size={20} />
@@ -52,10 +52,16 @@ export default function Footer() {
 
         <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
           <div className="flex gap-4">
-            <a href="/privacy-policy" className="hover:text-gray-300 transition-colors">
+            <a
+              href="/privacy-policy"
+              className="hover:text-gray-300 transition-colors"
+            >
               プライバシーポリシー
             </a>
-            <a href="/term-of-service" className="hover:text-gray-300 transition-colors">
+            <a
+              href="/term-of-service"
+              className="hover:text-gray-300 transition-colors"
+            >
               利用規約
             </a>
             {/* <a href="#" className="hover:text-gray-300 transition-colors">

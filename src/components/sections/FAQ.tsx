@@ -1,9 +1,9 @@
 "use client";
 
-import FadeIn from "@/components/ui/FadeIn";
-import { faqs } from "@/constants/faqs";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { useState } from "react";
+import FadeIn from "@/components/ui/FadeIn";
+import { faqs } from "@/constants/faqs";
 
 function FAQItem({ question, answer }: { question: string; answer: string }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,6 +11,7 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
   return (
     <div className="border-b border-gray-200 last:border-0">
       <button
+        type="button"
         className="w-full py-6 flex justify-between items-center text-left focus:outline-none"
         onClick={() => setIsOpen(!isOpen)}
       >
@@ -54,7 +55,7 @@ export default function FAQ() {
 
         <div className="bg-white rounded-2xl">
           {faqs.map((faq, index) => (
-            <FadeIn key={index} delay={index * 50}>
+            <FadeIn key={faq.q} delay={index * 50}>
               <FAQItem question={faq.q} answer={faq.a} />
             </FadeIn>
           ))}

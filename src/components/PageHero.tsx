@@ -33,6 +33,7 @@ export default function PageHero({
             viewBox="0 0 1440 320"
             className="w-full h-auto"
           >
+            <title>Wave pattern</title>
             <path
               fill="currentColor"
               fillOpacity="1"

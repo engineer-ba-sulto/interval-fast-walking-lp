@@ -1,7 +1,7 @@
 "use client";
 
-import { cn } from "@/lib/utils";
 import { Download } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 interface LandingButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -58,7 +58,7 @@ export default function LandingButton({
         sizes[size],
         widthClass,
         className,
-        "flex-row gap-2"
+        "flex-row gap-2",
       ),
     };
 
@@ -90,7 +90,7 @@ export default function LandingButton({
         variants[variant],
         sizes[size],
         widthClass,
-        className
+        className,
       )}
       {...props}
     >

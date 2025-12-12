@@ -1,5 +1,5 @@
-import FadeIn from "@/components/ui/FadeIn";
 import { BarChart3, Footprints, MousePointerClick, Timer } from "lucide-react";
+import FadeIn from "@/components/ui/FadeIn";
 
 const features = [
   {
@@ -54,7 +54,7 @@ export default function Features() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {features.map((feature, index) => (
-            <FadeIn key={index} delay={index * 150} className="h-full">
+            <FadeIn key={feature.title} delay={index * 150} className="h-full">
               <div
                 className="bg-white p-8 rounded-4xl h-full flex flex-col items-start text-left transition-transform hover:-translate-y-1 duration-300"
                 style={{

@@ -5,9 +5,7 @@ export const contactFormSchema = z.object({
     .string()
     .min(1, "メールアドレスは必須です")
     .email("メールアドレスの形式が正しくありません"),
-  category: z
-    .enum(["bug", "feature", "general", "ui/ux"])
-    .default("general"),
+  category: z.enum(["bug", "feature", "general", "ui/ux"]).default("general"),
   rating: z
     .number()
     .int()

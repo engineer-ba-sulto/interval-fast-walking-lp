@@ -1,5 +1,5 @@
-import PageHero from "@/components/PageHero";
 import Link from "next/link";
+import PageHero from "@/components/PageHero";
 
 export default function TermsOfServicePage() {
   return (
@@ -93,7 +93,9 @@ export default function TermsOfServicePage() {
                   地震、落雷、火災、停電、天災などの不可抗力により、本サービスの提供が困難となった場合
                 </li>
                 <li>コンピューターまたは通信回線等が事故により停止した場合</li>
-                <li>その他、本サービスが本サービスの提供が困難と判断した場合</li>
+                <li>
+                  その他、本サービスが本サービスの提供が困難と判断した場合
+                </li>
               </ul>
             </section>
 

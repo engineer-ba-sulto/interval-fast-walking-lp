@@ -1,5 +1,5 @@
-import PageHero from "@/components/PageHero";
 import Link from "next/link";
+import PageHero from "@/components/PageHero";
 
 export default function PrivacyPolicyPage() {
   return (
@@ -13,7 +13,7 @@ export default function PrivacyPolicyPage() {
         <div className="max-w-5xl mx-auto bg-white dark:bg-gray-800 p-8">
           <div className="prose prose-blue dark:prose-invert max-w-none">
             <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">
-						最終更新日: 2025年12月12日
+              最終更新日: 2025年12月12日
             </p>
 
             <section className="mb-8">

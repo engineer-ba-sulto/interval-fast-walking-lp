@@ -1,13 +1,13 @@
 "use client";
 
+import { Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   convertWaitlistToCsv,
   downloadCsvFile,
   generateTimestamp,
 } from "@/lib/csvUtils";
-import { type Waitlist } from "@/types/waitlist";
-import { Download } from "lucide-react";
+import type { Waitlist } from "@/types/waitlist";
 
 export default function DownloadWaitlistButton({ data }: { data: Waitlist[] }) {
   const handleDownload = () => {

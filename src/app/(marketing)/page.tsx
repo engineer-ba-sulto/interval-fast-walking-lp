@@ -1,3 +1,6 @@
+import type { Metadata } from "next";
+import StickyCTA from "@/components/StickyCTA";
+import Contact from "@/components/sections/Contact";
 import DownloadSection from "@/components/sections/Download";
 import FAQ from "@/components/sections/FAQ";
 import Features from "@/components/sections/Features";
@@ -8,9 +11,6 @@ import Problem from "@/components/sections/Problem";
 import Screenshots from "@/components/sections/Screenshots";
 import Solution from "@/components/sections/Solution";
 import TargetUsers from "@/components/sections/TargetUsers";
-import StickyCTA from "@/components/StickyCTA";
-import type { Metadata } from "next";
-import Contact from "@/components/sections/Contact";
 
 export const metadata: Metadata = {
   title: "インターバル速歩 - 健康な毎日を始めよう",

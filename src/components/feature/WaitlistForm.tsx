@@ -1,5 +1,7 @@
 "use client";
 
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Controller, useForm } from "react-hook-form";
 import { addWaitlist } from "@/actions/waitlist.action";
 import { Button } from "@/components/ui/button";
 import {
@@ -9,10 +11,8 @@ import {
   FieldLabel,
 } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
-import { type WaitlistForm } from "@/types/waitlist";
+import type { WaitlistFormType } from "@/types/waitlist";
 import { waitlistFormSchema } from "@/zod/waitlistForm.schema";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Controller, useForm } from "react-hook-form";
 
 export default function WaitlistForm() {
   const {
@@ -20,14 +20,14 @@ export default function WaitlistForm() {
     handleSubmit,
     formState: { errors },
     setError,
-  } = useForm<WaitlistForm>({
+  } = useForm<WaitlistFormType>({
     resolver: zodResolver(waitlistFormSchema),
     defaultValues: {
       email: "",
     },
   });
 
-  const onSubmit = async (data: WaitlistForm) => {
+  const onSubmit = async (data: WaitlistFormType) => {
     const result = await addWaitlist(data);
     if (result && !result.success) {
       // サーバーエラーを適切なフィールドに設定

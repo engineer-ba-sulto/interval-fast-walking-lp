@@ -1,8 +1,8 @@
+import { headers } from "next/headers";
+import { redirect } from "next/navigation";
 import Header from "@/components/feature/Header";
 import { isEmailAddressAllowed } from "@/lib/auth/domainUtils";
 import { auth } from "@/lib/auth/server";
-import { headers } from "next/headers";
-import { redirect } from "next/navigation";
 
 export default async function AdminLayout({
   children,

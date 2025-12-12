@@ -1,7 +1,7 @@
+import type { Metadata } from "next";
 import { getWaitlist } from "@/actions/waitlist.action";
 import DownloadWaitlistButton from "@/components/feature/DownloadWaitlistButton";
 import WaitlistTable from "@/components/feature/WaitlistTable";
-import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "管理者ダッシュボード",

@@ -15,6 +15,7 @@ export default function Solution() {
           className="absolute inset-0 w-full h-full opacity-15"
           preserveAspectRatio="none"
         >
+          <title>Subtle wavy lines</title>
           <path
             d="M0,80 Q 200,60 400,80 T 800,80 T 1200,80"
             fill="none"
@@ -47,6 +48,7 @@ export default function Solution() {
                 xmlns="http://www.w3.org/2000/svg"
                 className="w-full h-full"
               >
+                <title>Person walking with upward arrow</title>
                 <defs>
                   <linearGradient
                     id="iconGradient"

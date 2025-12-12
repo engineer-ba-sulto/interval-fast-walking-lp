@@ -1,7 +1,7 @@
-import Header from "@/components/feature/Header";
-import { auth } from "@/lib/auth/server";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
+import Header from "@/components/feature/Header";
+import { auth } from "@/lib/auth/server";
 
 export default async function AppLayout({
   children,
