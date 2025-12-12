@@ -1,7 +1,7 @@
-import { getDb } from "@/drizzle/db";
-import * as authSchema from "@/drizzle/schema/authSchema";
 import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
+import { getDb } from "@/drizzle/db";
+import * as authSchema from "@/drizzle/schema/authSchema";
 
 export const auth = async () => {
   const db = await getDb();

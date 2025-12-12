@@ -17,9 +17,9 @@
   },
   "d1_databases": [
     {
-      "binding": "interval_fast_walking_lp_db",
+      "binding": "DB",
       "database_name": "interval-fast-walking-lp-db",
-      "database_id": "e6835535-8eb9-4ea2-91cc-4503dcf64a1e",
+      "database_id": "88fd9dc2-3525-4d57-9e6f-71de1dd7ab74",
       "migrations_dir": "src/drizzle/migrations"
     }
   ]

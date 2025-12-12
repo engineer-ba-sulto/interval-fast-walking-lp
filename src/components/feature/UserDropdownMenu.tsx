@@ -1,5 +1,8 @@
 "use client";
 
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   DropdownMenu,
@@ -9,9 +12,6 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { authClient } from "@/lib/auth/client";
 import { isEmailAddressAllowed } from "@/lib/auth/domainUtils";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
 
 export default function UserDropdownMenu() {
   const { data: session } = authClient.useSession();
@@ -26,7 +26,10 @@ export default function UserDropdownMenu() {
       {/* ユーザーメニュー */}
       <DropdownMenu open={isMenuOpen} onOpenChange={setIsMenuOpen}>
         <DropdownMenuTrigger asChild>
-          <button className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
+          <button
+            type="button"
+            className="flex items-center space-x-2 hover:opacity-80 transition-opacity"
+          >
             <Avatar className="cursor-pointer size-9 ring-2 ring-gray-200 hover:ring-gray-300 transition-all">
               <AvatarImage
                 src={session?.user.image || ""}

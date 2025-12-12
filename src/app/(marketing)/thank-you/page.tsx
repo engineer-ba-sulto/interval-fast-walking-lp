@@ -1,5 +1,5 @@
-import ThankYouMessage from "@/components/feature/ThankYouMessage";
 import type { Metadata } from "next";
+import ThankYouMessage from "@/components/feature/ThankYouMessage";
 
 export const metadata: Metadata = {
   title: "Thanks",
