@@ -4,7 +4,7 @@ import { desc } from "drizzle-orm";
 import { redirect } from "next/navigation";
 import { getDb } from "@/drizzle/db";
 import { waitlistTable } from "@/drizzle/schema/waitlistSchema";
-import type { Waitlist, WaitlistForm } from "@/types/waitlist";
+import type { Waitlist, WaitlistFormType } from "@/types/waitlist";
 
 export async function getWaitlist(): Promise<Waitlist[]> {
   try {
@@ -20,7 +20,7 @@ export async function getWaitlist(): Promise<Waitlist[]> {
   }
 }
 
-export async function addWaitlist(data: WaitlistForm) {
+export async function addWaitlist(data: WaitlistFormType) {
   try {
     const db = await getDb();
     await db.insert(waitlistTable).values({
