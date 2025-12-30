@@ -26,7 +26,7 @@ export default function LandingButton({
   const variants = {
     primary: "bg-btn-gradient text-white hover:shadow-xl",
     secondary:
-      "bg-white text-[#558B2F] border border-[#558B2F] hover:bg-gray-50",
+      "bg-white text-brand-primary-dark border border-brand-primary-dark hover:bg-emerald-50",
     outline:
       "bg-transparent border-2 border-white text-white hover:bg-white/10",
     appstore: "bg-black text-white hover:bg-gray-900",

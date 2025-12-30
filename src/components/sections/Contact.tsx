@@ -1,7 +1,7 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { StarIcon } from "lucide-react";
+import { Send, StarIcon } from "lucide-react";
 import { Controller, useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { addContact } from "@/actions/contact.action";
@@ -72,173 +72,206 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden bg-linear-to-br from-brand-primary-light/20 via-white to-brand-secondary/10 py-20 sm:py-24"
+      className="relative overflow-hidden bg-white py-24 md:py-40"
     >
-      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10" />
-      <div className="container relative z-10 mx-auto px-6">
-        <FadeIn className="max-w-4xl mx-auto text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-primary">
-            Contact
-          </p>
-          <h2 className="mt-2 text-3xl font-bold text-brand-text-main sm:text-4xl">
-            ご質問・改善要望をお聞かせください
-          </h2>
-          <div className="mt-4 space-y-2 text-base text-brand-text-secondary sm:text-lg">
-            <p>
-              改善のためのご意見や不具合報告をお寄せください。数分で完了します。
-            </p>
-            <p>
-              4つのカテゴリと星評価で、できるだけ具体的にお知らせいただけると助かります。
-            </p>
-          </div>
-        </FadeIn>
+      {/* Texture Layer */}
+      <div className="absolute inset-0 bg-noise opacity-[0.02] pointer-events-none mix-blend-overlay"></div>
 
-        <FadeIn delay={150} className="mt-10 max-w-4xl mx-auto">
-          <div className="rounded-2xl border border-brand-primary/10 bg-white/80 p-6 shadow-xl backdrop-blur-sm sm:p-10">
-            <form className="space-y-8" onSubmit={handleSubmit(onSubmit)}>
-              <FieldGroup>
-                <Controller
-                  name="email"
-                  control={control}
-                  render={({ field, fieldState }) => (
-                    <Field data-invalid={fieldState.invalid}>
-                      <FieldLabel htmlFor="contact-email">
-                        メールアドレス
-                      </FieldLabel>
-                      <FieldContent>
-                        <Input
-                          {...field}
-                          id="contact-email"
-                          type="email"
-                          aria-invalid={fieldState.invalid}
-                          placeholder="you@example.com"
-                          autoComplete="email"
-                        />
-                        <FieldError errors={[errors.email]} />
-                      </FieldContent>
-                    </Field>
-                  )}
-                />
+      {/* Organic Background Shapes */}
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] bg-brand-bg-start/30 mask-radial -z-10 animate-spin-slow opacity-50"></div>
+      </div>
 
-                <Controller
-                  name="category"
-                  control={control}
-                  render={({ field, fieldState }) => (
-                    <Field data-invalid={fieldState.invalid}>
-                      <FieldLabel>フィードバックの種類</FieldLabel>
-                      <FieldContent>
-                        <div className="flex flex-wrap gap-2">
-                          {categoryOptions.map((option) => {
-                            const isActive = field.value === option.value;
-                            return (
-                              <button
-                                key={option.value}
-                                type="button"
-                                onClick={() => field.onChange(option.value)}
-                                className={cn(
-                                  "rounded-xl border px-4 py-2 text-sm font-semibold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary/40",
-                                  isActive
-                                    ? "border-emerald-500 bg-emerald-50 text-emerald-700 shadow-[0_2px_8px_rgba(16,185,129,0.12)]"
-                                    : "border-gray-200 bg-white text-brand-text-main hover:border-emerald-200 hover:bg-emerald-50/60",
-                                )}
-                                aria-pressed={isActive}
-                                aria-label={option.label}
-                              >
-                                {option.label}
-                              </button>
-                            );
-                          })}
-                        </div>
-                        <FieldError errors={[errors.category]} />
-                      </FieldContent>
-                    </Field>
-                  )}
-                />
-
-                <Controller
-                  name="rating"
-                  control={control}
-                  render={({ field, fieldState }) => (
-                    <Field data-invalid={fieldState.invalid}>
-                      <FieldLabel>星評価（1-5）</FieldLabel>
-                      <FieldContent>
-                        <div className="flex items-center gap-2">
-                          {[1, 2, 3, 4, 5].map((value) => {
-                            const active = (field.value ?? 0) >= value;
-                            return (
-                              <button
-                                key={value}
-                                type="button"
-                                onClick={() => field.onChange(value)}
-                                className={cn(
-                                  "flex h-10 w-10 items-center justify-center rounded-full border transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary/50",
-                                  active
-                                    ? "border-amber-300 bg-white text-amber-400 shadow-[0_2px_8px_rgba(0,0,0,0.08)]"
-                                    : "border-border bg-white text-muted-foreground hover:border-amber-200 hover:bg-amber-50",
-                                )}
-                                aria-pressed={active}
-                                aria-label={`星${value}を選択`}
-                              >
-                                <StarIcon
-                                  className={cn(
-                                    "size-6",
-                                    active
-                                      ? "fill-amber-400 text-amber-400 drop-shadow-[0_0_6px_rgba(251,191,36,0.65)]"
-                                      : "fill-none text-gray-300",
-                                  )}
-                                />
-                              </button>
-                            );
-                          })}
-                          <span className="text-sm text-muted-foreground">
-                            {field.value ?? 0}/5
-                          </span>
-                        </div>
-                        <FieldError errors={[errors.rating]} />
-                      </FieldContent>
-                    </Field>
-                  )}
-                />
-
-                <Controller
-                  name="content"
-                  control={control}
-                  render={({ field, fieldState }) => (
-                    <Field data-invalid={fieldState.invalid}>
-                      <FieldLabel htmlFor="contact-content">
-                        詳細内容
-                      </FieldLabel>
-                      <FieldContent>
-                        <textarea
-                          {...field}
-                          id="contact-content"
-                          rows={5}
-                          aria-invalid={fieldState.invalid}
-                          placeholder="具体的にお書きください"
-                          className="w-full rounded-md border border-input bg-white px-3 py-2 text-sm shadow-xs outline-none transition focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 aria-invalid:border-destructive aria-invalid:ring-destructive/20"
-                        />
-                        <FieldError errors={[errors.content]} />
-                      </FieldContent>
-                    </Field>
-                  )}
-                />
-              </FieldGroup>
-
-              <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
-                <p className="text-sm text-brand-text-secondary">
-                  お問い合わせ内容はデータベースに保存されます。
+      <div className="container relative z-10 mx-auto px-6 max-w-5xl">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-16 items-start">
+          <div className="lg:col-span-2">
+            <FadeIn>
+              <span className="text-brand-primary font-bold tracking-widest text-sm uppercase mb-4 block">
+                Feedback
+              </span>
+              <h2 className="text-3xl md:text-5xl font-black text-brand-text-main mb-8 leading-tight tracking-tight">
+                あなたの声が、
+                <br />
+                「歩時間」を育てる
+              </h2>
+              <div className="space-y-6 text-brand-text-sub text-lg font-medium opacity-80 leading-relaxed">
+                <p>
+                  改善のためのご意見や不具合報告、新しい機能のアイデアなど、どんなことでもお聞かせください。
                 </p>
-                <Button
-                  type="submit"
-                  className="min-w-[180px] shadow-lg"
-                  disabled={isSubmitting}
-                >
-                  {isSubmitting ? "送信中..." : "送信する"}
-                </Button>
+                <p>
+                  ユーザーの皆様と一緒に、最高のウォーキング体験を作っていきたいと考えています。
+                </p>
               </div>
-            </form>
+
+              {/* Decorative Card */}
+              <div className="mt-12 p-8 bg-brand-primary/5 rounded-4xl border border-brand-primary/10 relative overflow-hidden group">
+                <div className="absolute top-0 right-0 w-24 h-24 bg-brand-primary/10 rounded-full blur-2xl -mr-8 -mt-8 group-hover:scale-150 transition-transform duration-700"></div>
+                <p className="text-brand-primary font-bold text-sm mb-2">
+                  Response rate
+                </p>
+                <p className="text-brand-text-main font-black text-2xl">
+                  Usually within 24h
+                </p>
+              </div>
+            </FadeIn>
           </div>
-        </FadeIn>
+
+          <div className="lg:col-span-3">
+            <FadeIn delay={200}>
+              <div className="rounded-[3rem] border border-brand-primary/10 bg-white p-8 md:p-12 shadow-2xl shadow-emerald-900/5 relative overflow-hidden group">
+                <form
+                  className="space-y-8 relative z-10"
+                  onSubmit={handleSubmit(onSubmit)}
+                >
+                  <FieldGroup className="space-y-8">
+                    <Controller
+                      name="email"
+                      control={control}
+                      render={({ field, fieldState }) => (
+                        <Field data-invalid={fieldState.invalid}>
+                          <FieldLabel
+                            htmlFor="contact-email"
+                            className="font-bold text-brand-text-main"
+                          >
+                            メールアドレス
+                          </FieldLabel>
+                          <FieldContent>
+                            <Input
+                              {...field}
+                              id="contact-email"
+                              type="email"
+                              aria-invalid={fieldState.invalid}
+                              placeholder="you@example.com"
+                              className="h-14 rounded-2xl bg-slate-50 border-slate-100 focus:bg-white transition-all"
+                            />
+                            <FieldError errors={[errors.email]} />
+                          </FieldContent>
+                        </Field>
+                      )}
+                    />
+
+                    <Controller
+                      name="category"
+                      control={control}
+                      render={({ field }) => (
+                        <Field>
+                          <FieldLabel className="font-bold text-brand-text-main">
+                            フィードバックの種類
+                          </FieldLabel>
+                          <FieldContent>
+                            <div className="flex flex-wrap gap-3">
+                              {categoryOptions.map((option) => {
+                                const isActive = field.value === option.value;
+                                return (
+                                  <button
+                                    key={option.value}
+                                    type="button"
+                                    onClick={() => field.onChange(option.value)}
+                                    className={cn(
+                                      "rounded-2xl border px-5 py-3 text-sm font-bold transition-all duration-300",
+                                      isActive
+                                        ? "border-brand-primary bg-brand-primary text-white shadow-lg shadow-emerald-900/10 scale-105"
+                                        : "border-slate-100 bg-slate-50 text-brand-text-sub hover:border-brand-primary/30 hover:bg-white",
+                                    )}
+                                  >
+                                    {option.label}
+                                  </button>
+                                );
+                              })}
+                            </div>
+                          </FieldContent>
+                        </Field>
+                      )}
+                    />
+
+                    <Controller
+                      name="rating"
+                      control={control}
+                      render={({ field }) => (
+                        <Field>
+                          <FieldLabel className="font-bold text-brand-text-main">
+                            今の満足度は？
+                          </FieldLabel>
+                          <FieldContent>
+                            <div className="flex items-center gap-3">
+                              {[1, 2, 3, 4, 5].map((value) => {
+                                const active = (field.value ?? 0) >= value;
+                                return (
+                                  <button
+                                    key={value}
+                                    type="button"
+                                    onClick={() => field.onChange(value)}
+                                    className={cn(
+                                      "flex h-12 w-12 items-center justify-center rounded-2xl transition-all duration-300",
+                                      active
+                                        ? "bg-amber-50 text-amber-500 scale-110"
+                                        : "bg-slate-50 text-slate-300 hover:bg-slate-100",
+                                    )}
+                                  >
+                                    <StarIcon
+                                      className={cn(
+                                        "size-7 transition-all duration-300",
+                                        active ? "fill-current" : "fill-none",
+                                      )}
+                                    />
+                                  </button>
+                                );
+                              })}
+                            </div>
+                          </FieldContent>
+                        </Field>
+                      )}
+                    />
+
+                    <Controller
+                      name="content"
+                      control={control}
+                      render={({ field, fieldState }) => (
+                        <Field data-invalid={fieldState.invalid}>
+                          <FieldLabel
+                            htmlFor="contact-content"
+                            className="font-bold text-brand-text-main"
+                          >
+                            詳細内容
+                          </FieldLabel>
+                          <FieldContent>
+                            <textarea
+                              {...field}
+                              id="contact-content"
+                              rows={5}
+                              placeholder="具体的にお書きください"
+                              className="w-full rounded-2xl bg-slate-50 border border-slate-100 px-5 py-4 text-base outline-none transition-all focus:bg-white focus:border-brand-primary ring-brand-primary/10 focus:ring-4"
+                            />
+                            <FieldError errors={[errors.content]} />
+                          </FieldContent>
+                        </Field>
+                      )}
+                    />
+                  </FieldGroup>
+
+                  <div className="pt-4">
+                    <Button
+                      type="submit"
+                      size="lg"
+                      className="w-full h-16 rounded-2xl bg-brand-primary hover:bg-brand-primary-dark text-white font-black text-lg shadow-xl shadow-emerald-900/10 transition-all hover:-translate-y-1 active:translate-y-0"
+                      disabled={isSubmitting}
+                    >
+                      {isSubmitting ? (
+                        <span className="flex items-center gap-2">
+                          送信中...
+                        </span>
+                      ) : (
+                        <span className="flex items-center gap-2">
+                          メッセージを送る <Send size={20} />
+                        </span>
+                      )}
+                    </Button>
+                  </div>
+                </form>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
       </div>
     </section>
   );
