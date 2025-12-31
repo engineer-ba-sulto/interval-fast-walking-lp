@@ -1,3 +1,4 @@
+import Image from "next/image";
 import FadeIn from "@/components/ui/FadeIn";
 
 export default function Problem() {
@@ -74,64 +75,13 @@ export default function Problem() {
                 <div className="absolute inset-0 bg-brand-primary-light/10 rounded-full animate-float blur-3xl opacity-50"></div>
 
                 {/* Custom SVG Illustration */}
-                <svg
-                  viewBox="0 0 500 500"
-                  className="w-full h-full relative z-10 drop-shadow-2xl"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <title>挫折のループを断ち切るイメージ</title>
-                  <defs>
-                    <linearGradient
-                      id="pathGrad"
-                      x1="0%"
-                      y1="100%"
-                      x2="100%"
-                      y2="0%"
-                    >
-                      <stop offset="0%" stopColor="#E2E8F0" />
-                      <stop offset="100%" stopColor="#94A3B8" />
-                    </linearGradient>
-                  </defs>
-
-                  {/* Wavy Loop Path */}
-                  <path
-                    d="M100 400 C 150 400, 200 350, 250 350 S 350 400, 400 400 C 450 400, 450 300, 450 250 S 450 100, 400 100 C 350 100, 250 150, 200 150 S 100 100, 50 100"
-                    fill="none"
-                    stroke="url(#pathGrad)"
-                    strokeWidth="30"
-                    strokeLinecap="round"
-                    className="opacity-40"
-                  />
-
-                  {/* Broken Point */}
-                  <path
-                    d="M200 150 L 300 150"
-                    stroke="#F87171"
-                    strokeWidth="35"
-                    strokeLinecap="round"
-                    className="animate-pulse"
-                  />
-
-                  {/* Person Sitting Down (Frustrated) */}
-                  <g
-                    transform="translate(220, 100)"
-                    className="animate-float-slow"
-                  >
-                    <circle cx="30" cy="15" r="15" fill="#475569" />
-                    <path
-                      d="M30 30 L 30 70 M 30 50 L 10 30 M 30 50 L 50 30"
-                      stroke="#475569"
-                      strokeWidth="8"
-                      strokeLinecap="round"
-                    />
-                    <path
-                      d="M30 70 L 10 90 M 30 70 L 50 90"
-                      stroke="#475569"
-                      strokeWidth="8"
-                      strokeLinecap="round"
-                    />
-                  </g>
-                </svg>
+                <Image
+                  src="/frustration-loop.jpg"
+                  alt="挫折のループを断ち切るイメージ"
+                  width={450}
+                  height={450}
+                  className="w-full h-full object-contain relative z-10 drop-shadow-2xl rounded-[2.5rem]"
+                />
 
                 {/* Floating labels */}
                 <div className="absolute top-[10%] left-0 bg-white px-4 py-2 rounded-xl shadow-lg text-sm font-bold text-slate-500 transform -rotate-12 animate-float cursor-default">
