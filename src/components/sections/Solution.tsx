@@ -1,115 +1,61 @@
+import { Sparkles } from "lucide-react";
 import FadeIn from "@/components/ui/FadeIn";
 
 export default function Solution() {
   return (
-    <section className="relative py-20 md:py-32 bg-[#F1F8F4] flex justify-center items-center overflow-hidden">
-      {/* Background Texture Layers (Watercolor effect) */}
-      <div className="absolute inset-0 z-0 opacity-70 mix-blend-multiply pointer-events-none">
-        {/* Watercolor splotches */}
-        <div className="absolute top-[-15%] left-[-8%] w-[600px] h-[600px] bg-[#A5D6A7] rounded-full blur-[100px] opacity-30"></div>
-        <div className="absolute bottom-[-15%] right-[-8%] w-[500px] h-[500px] bg-[#81C784] rounded-full blur-[100px] opacity-25"></div>
-        <div className="absolute top-[25%] right-[15%] w-[350px] h-[350px] bg-brand-bg-start rounded-full blur-[80px] opacity-35"></div>
+    <section className="relative py-24 md:py-40 bg-brand-bg-end/30 flex justify-center items-center overflow-hidden">
+      {/* Texture Layer */}
+      <div className="absolute inset-0 bg-noise opacity-[0.02] pointer-events-none mix-blend-overlay"></div>
 
-        {/* Subtle wavy lines */}
-        <svg
-          className="absolute inset-0 w-full h-full opacity-15"
-          preserveAspectRatio="none"
-        >
-          <title>Subtle wavy lines</title>
-          <path
-            d="M0,80 Q 200,60 400,80 T 800,80 T 1200,80"
-            fill="none"
-            stroke="#4CAF50"
-            strokeWidth="1.5"
-          />
-          <path
-            d="M0,180 Q 300,160 600,180 T 1200,180"
-            fill="none"
-            stroke="#4CAF50"
-            strokeWidth="1.5"
-          />
-          <path
-            d="M0,280 Q 250,260 500,280 T 1000,280 T 1200,280"
-            fill="none"
-            stroke="#4CAF50"
-            strokeWidth="1.5"
-          />
-        </svg>
+      {/* Dynamic Background Elements */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-white/40 rounded-[40%] animate-spin-slow blur-3xl opacity-50"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-brand-primary-light/5 opacity-50"></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
         <FadeIn>
           <div className="flex flex-col items-center max-w-4xl mx-auto text-center">
-            {/* Custom Icon: Person walking with upward arrow */}
-            <div className="mb-10 w-28 h-28 md:w-36 md:h-36">
-              <svg
-                viewBox="0 0 100 100"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-full h-full"
-              >
-                <title>Person walking with upward arrow</title>
-                <defs>
-                  <linearGradient
-                    id="iconGradient"
-                    x1="0"
-                    y1="0"
-                    x2="100"
-                    y2="100"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop stopColor="#66BB6A" />
-                    <stop offset="1" stopColor="#4CAF50" />
-                  </linearGradient>
-                </defs>
+            {/* Visual Icon/Graphic */}
+            <div className="relative mb-12 group">
+              <div className="absolute inset-0 bg-brand-primary-light/20 rounded-full blur-2xl group-hover:blur-3xl transition-all duration-500 scale-125"></div>
+              <div className="w-24 h-24 md:w-32 md:h-32 bg-white rounded-4xl shadow-xl flex items-center justify-center transform rotate-12 group-hover:rotate-0 transition-transform duration-500 relative z-10">
+                <Sparkles className="w-12 h-12 md:w-16 md:h-16 text-brand-primary animate-pulse" />
+              </div>
 
-                {/* Arrow curving up from behind person */}
-                <path
-                  d="M15 70 Q 45 70, 75 30"
-                  stroke="url(#iconGradient)"
-                  strokeWidth="7"
-                  strokeLinecap="round"
-                  fill="none"
-                />
-                {/* Arrow head */}
-                <path
-                  d="M60 30 L 75 30 L 75 45"
-                  stroke="url(#iconGradient)"
-                  strokeWidth="7"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  fill="none"
-                />
-
-                {/* Person Walking */}
-                <g transform="translate(50, 30)">
-                  {/* Head */}
-                  <circle cx="0" cy="-8" r="8" fill="url(#iconGradient)" />
-                  {/* Body and limbs */}
-                  <path
-                    d="M0 0 L 0 20 M 0 3 L -5 10 M 0 3 L 5 10 M 0 20 L -3 32 M 0 20 L 3 32"
-                    stroke="url(#iconGradient)"
-                    strokeWidth="4"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    fill="none"
-                  />
-                </g>
-              </svg>
+              {/* Floating Decorative Orbs */}
+              <div className="absolute -top-4 -right-4 w-8 h-8 bg-brand-accent rounded-full animate-float shadow-lg"></div>
+              <div className="absolute -bottom-2 -left-6 w-6 h-6 bg-brand-primary rounded-full animate-float-delayed shadow-lg"></div>
             </div>
 
-            {/* Title */}
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-black mb-8 leading-tight tracking-tight">
-              あなたの運動習慣を成功に導く
-              <br className="block" />
-              シンプルな解決方法
+            {/* Title with Gradient Text */}
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-brand-text-main mb-10 leading-[1.1] tracking-tight text-balance">
+              あなたの「歩く」を
+              <br />
+              <span className="bg-linear-to-r from-brand-primary to-brand-primary-light bg-clip-text text-transparent">
+                最高の体験
+              </span>
+              へ変える
             </h2>
 
-            {/* Description */}
-            <p className="text-black text-base md:text-lg leading-relaxed font-medium max-w-3xl opacity-90">
-              インターバル速歩は、ウォーキングを誰でも簡単に、効果的で、持続可能なものにします。
-              あなたの現在のフィットネスレベルに関わらず、健康的でアクティブな生活への第一歩をサポートします。
-            </p>
+            {/* Description with enhanced typography */}
+            <div className="relative">
+              <p className="text-brand-text-sub text-lg md:text-2xl leading-relaxed font-semibold max-w-3xl mx-auto mb-8 opacity-90">
+                インターバル速歩は、誰でも簡単に、効果的で、
+                持続可能な運動習慣を手に入れるためのメソッドです。
+              </p>
+              <p className="text-brand-text-sub text-base md:text-lg leading-relaxed font-medium max-w-2xl mx-auto opacity-70">
+                あなたのレベルに合わせて、健康的でアクティブな生活への第一歩を
+                テクノロジーと温かみのあるデザインでサポートします。
+              </p>
+            </div>
+
+            {/* Decorative Element */}
+            <div className="mt-16 flex items-center gap-4">
+              <div className="h-px w-12 bg-brand-primary-light/30"></div>
+              <div className="w-2 h-2 rounded-full bg-brand-primary-light animate-pulse"></div>
+              <div className="h-px w-12 bg-brand-primary-light/30"></div>
+            </div>
           </div>
         </FadeIn>
       </div>

@@ -6,45 +6,63 @@ import LandingButton from "@/components/ui/LandingButton";
 export default function Hero() {
   return (
     <section className="relative w-full min-h-screen flex items-center justify-center bg-brand-gradient overflow-hidden pt-24 pb-12 lg:pt-0 lg:pb-0">
-      {/* Background Decor - Abstract Waves/Blobs */}
+      {/* Texture Layer */}
+      <div className="absolute inset-0 bg-noise opacity-[0.03] pointer-events-none mix-blend-overlay"></div>
+
+      {/* Background Decor - Organic Blobs */}
       <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-white opacity-40 rounded-full blur-3xl mix-blend-soft-light"></div>
-        <div className="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-brand-primary-light opacity-20 rounded-full blur-3xl mix-blend-multiply"></div>
+        <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-brand-accent opacity-20 rounded-full blur-3xl mix-blend-multiply animate-pulse-subtle"></div>
+        <div className="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-brand-primary-light opacity-20 rounded-full blur-3xl mix-blend-multiply animate-float"></div>
       </div>
 
       <div className="container max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center px-6 relative z-10">
         {/* Left: Text Content */}
         <div className="flex flex-col items-center lg:items-start text-center lg:text-left order-2 lg:order-1 lg:pl-4">
           <FadeIn delay={100}>
-            <span className="inline-flex items-center py-2 px-4 rounded-full bg-white text-brand-primary-dark font-bold text-sm sm:text-base mb-6 tracking-wide shadow-xl border border-brand-primary-light/20 transform hover:scale-105 transition-transform duration-300">
+            <span className="inline-flex items-center py-2 px-5 rounded-full bg-white/80 backdrop-blur-sm text-brand-primary-dark font-bold text-sm mb-8 tracking-wider shadow-sm border border-brand-primary-light/10 transform hover:-translate-y-1 transition-transform duration-300 cursor-default">
               <span className="w-2 h-2 rounded-full bg-brand-accent mr-3 animate-pulse"></span>
               インターバル速歩 - タイマーアプリ・歩時間（あるじかん）
             </span>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-text-main leading-[1.3] mb-6">
-              簡単に続く、
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black text-brand-text-main leading-[1.1] mb-8 tracking-tighter text-balance">
+              歩く時間が、
               <br />
-              ウォーキング習慣で
-              <br />
-              健康な毎日を始めよう
+              <span className="text-brand-primary-light relative inline-block">
+                輝き出す。
+                <svg
+                  className="absolute -bottom-2 left-0 w-full h-3 text-brand-accent/40"
+                  viewBox="0 0 200 12"
+                  fill="none"
+                  preserveAspectRatio="none"
+                >
+                  <title>SVG Background for Phone</title>
+                  <path
+                    d="M1 10.5C50 1.5 150 1.5 199 10.5"
+                    stroke="currentColor"
+                    strokeWidth="6"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </span>
             </h1>
           </FadeIn>
 
           <FadeIn delay={300}>
-            <p className="text-brand-text-sub text-base sm:text-lg mb-8 max-w-lg leading-relaxed">
-              運動習慣を身につけたいあなたへ。あなたに最適なウォーキングプランを自動提案。
-              シンプルで続けやすく、年配の方にも安心。今日から健康的な毎日を始めましょう。
+            <p className="text-brand-text-sub text-lg sm:text-xl mb-10 max-w-lg leading-relaxed font-medium">
+              あなたの「歩き」をアップデート。
+              インターバル速歩で、もっと自由に、もっと健やかに。
+              シンプルで心強いパートナーが、あなたの毎日を彩ります。
             </p>
           </FadeIn>
 
           <FadeIn
             delay={500}
-            className="w-full flex justify-center lg:justify-center"
+            className="w-full flex justify-center lg:justify-start"
           >
             <LandingButton
               href="https://apps.apple.com/jp/app/id6755136927"
               variant="appstore"
               size="lg"
-              className="w-full sm:w-auto shadow-xl"
+              className="w-full sm:w-auto shadow-2xl hover:shadow-brand-primary/20"
             />
           </FadeIn>
         </div>
@@ -53,42 +71,52 @@ export default function Hero() {
         <div className="relative flex justify-center items-center order-1 lg:order-2">
           <FadeIn
             delay={200}
-            className="relative w-[300px] sm:w-[340px] lg:w-[380px] h-[600px] sm:h-[680px] flex items-center justify-center"
+            className="relative w-full aspect-square flex items-center justify-center max-w-[500px]"
           >
-            {/* Orbit / Connecting Lines Effect */}
-            <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
-              <div className="absolute w-[120%] h-[60%] border border-white/60 rounded-[50%] rotate-[-15deg] animate-spin-slow opacity-60"></div>
-              <div className="absolute w-[140%] h-[70%] border border-white/40 rounded-[50%] rotate-15 animate-spin-slow opacity-40 delay-75"></div>
-
-              {/* Glowing Dots on orbits */}
-              <div className="absolute w-2 h-2 bg-white rounded-full top-[20%] left-[10%] shadow-[0_0_10px_rgba(255,255,255,0.8)] animate-pulse"></div>
-              <div className="absolute w-2 h-2 bg-white rounded-full bottom-[30%] right-[10%] shadow-[0_0_10px_rgba(255,255,255,0.8)] animate-pulse delay-500"></div>
+            {/* Organic SVG Background for Phone */}
+            <div className="absolute inset-0 flex items-center justify-center -z-10 animate-spin-slow opacity-30">
+              <svg
+                width="100%"
+                height="100%"
+                viewBox="0 0 200 200"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <title>Organic SVG Background for Phone</title>
+                <path
+                  fill="#10B981"
+                  d="M44.7,-76.4C58.3,-69.2,70,-58,78.2,-44.7C86.4,-31.4,91,-15.7,89.5,-0.9C88,14,80.4,28,71.5,40.4C62.6,52.8,52.4,63.6,40.1,71.3C27.7,79.1,13.8,83.8,-0.9,85.4C-15.7,86.9,-31.4,85.3,-45,78.3C-58.7,71.2,-70.3,58.7,-77.9,44.7C-85.5,30.7,-89.1,15.3,-88.4,0.4C-87.8,-14.5,-82.8,-29,-74,-41.2C-65.1,-53.4,-52.3,-63.3,-38.6,-70.5C-25,-77.6,-12.5,-82,1.2,-84.1C14.9,-86.2,29.9,-86,44.7,-76.4Z"
+                  transform="translate(100 100)"
+                />
+              </svg>
             </div>
 
-            {/* Floating Icons */}
-            {/* Leaf */}
-            <div className="absolute top-[15%] left-[-5%] sm:left-[-15%] animate-float bg-white/90 backdrop-blur-md p-3 rounded-full shadow-lg z-20 hover:scale-110 transition-transform cursor-default">
-              <Leaf className="text-brand-primary-light w-6 h-6 sm:w-8 sm:h-8 fill-brand-bg-start" />
+            {/* Orbiting Elements */}
+            <div className="absolute inset-0 pointer-events-none">
+              {/* Leaf */}
+              <div className="absolute top-[10%] left-[10%] animate-float bg-white p-4 rounded-2xl shadow-xl z-20 transform -rotate-12">
+                <Leaf className="text-brand-primary-light w-8 h-8 fill-emerald-50" />
+              </div>
+
+              {/* Walker */}
+              <div className="absolute bottom-[20%] right-[-5%] animate-float-delayed bg-white p-4 rounded-2xl shadow-xl z-20 transform rotate-12">
+                <Footprints className="text-brand-primary-light w-8 h-8 fill-emerald-50" />
+              </div>
+
+              {/* Heart */}
+              <div className="absolute bottom-[10%] left-[5%] animate-float-slow bg-white p-4 rounded-2xl shadow-xl z-20 transform -rotate-6">
+                <Heart className="text-brand-primary-light w-8 h-8 fill-emerald-50" />
+              </div>
             </div>
 
-            {/* Walker */}
-            <div className="absolute top-[45%] right-[-10%] sm:right-[-20%] animate-float-delayed bg-white/90 backdrop-blur-md p-3 rounded-full shadow-lg z-20 hover:scale-110 transition-transform cursor-default">
-              <Footprints className="text-brand-primary-light w-6 h-6 sm:w-8 sm:h-8 fill-brand-bg-start" />
-            </div>
-
-            {/* Heart */}
-            <div className="absolute bottom-[20%] left-[0%] sm:left-[-10%] animate-float-slow bg-white/90 backdrop-blur-md p-3 rounded-full shadow-lg z-20 hover:scale-110 transition-transform cursor-default">
-              <Heart className="text-brand-primary-light w-6 h-6 sm:w-8 sm:h-8 fill-brand-bg-start" />
-            </div>
-
-            {/* Phone Image */}
-            <div className="relative w-[280px] sm:w-[300px] h-[580px] sm:h-[620px] transform -rotate-6 hover:rotate-0 transition-transform duration-700 ease-out z-10">
+            {/* Phone Image Container */}
+            <div className="relative w-[280px] sm:w-[320px] lg:w-[340px] h-full transform hover:scale-105 transition-transform duration-700 ease-out z-10">
+              <div className="absolute inset-0 bg-brand-primary/10 blur-3xl -z-10 rounded-full scale-75"></div>
               <Image
                 src="/top.png"
                 alt="Interval Walking App"
-                width={300}
-                height={620}
-                className="w-full h-full object-contain drop-shadow-2xl"
+                width={340}
+                height={700}
+                className="w-full h-auto object-contain drop-shadow-[0_25px_50px_rgba(0,0,0,0.15)]"
                 priority
               />
             </div>

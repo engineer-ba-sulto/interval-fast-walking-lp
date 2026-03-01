@@ -1,13 +1,21 @@
 import { GoogleAnalytics } from "@next/third-parties/google";
 import type { Metadata } from "next";
-import { Noto_Sans_JP } from "next/font/google";
+import { Plus_Jakarta_Sans, Zen_Kaku_Gothic_New } from "next/font/google";
 import { Toaster } from "sonner";
 import { getBaseUrl } from "@/lib/url-utils";
 import "./globals.css";
 
-const notoSansJP = Noto_Sans_JP({
+const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  variable: "--font-plus-jakarta",
+  display: "swap",
+});
+
+const zenKakuGothic = Zen_Kaku_Gothic_New({
+  subsets: ["latin"],
+  weight: ["400", "500", "700", "900"],
+  variable: "--font-zen-kaku",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -50,7 +58,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja" suppressHydrationWarning>
-      <body className={`${notoSansJP.className} antialiased`}>
+      <body
+        className={`${plusJakartaSans.variable} ${zenKakuGothic.variable} font-sans antialiased`}
+      >
         {children}
         <Toaster />
       </body>
